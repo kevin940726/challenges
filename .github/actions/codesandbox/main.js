@@ -6,28 +6,24 @@ async function main() {
     const githubToken = core.getInput('github-token', { required: true });
 
     const octokit = new github.GitHub(githubToken);
-    const context = github.context;
-    const issue = context.issue;
-
-    console.log(context);
+    const { repository: repo, pull_request: pr } = github.context.payload;
 
     // Do nothing if its not a pr
-    if (!context.payload.pull_request) {
+    if (!pr) {
       console.log(
         'The event that triggered this action was not a pull request, skipping.'
       );
       return;
     }
 
-    const pull_request = context.payload.pull_request;
-    console.log(pull_request);
-
     await octokit.checks.create({
-      owner: issue.owner,
-      repo: issue.repo,
-      name: 'codesandbox',
-      head_sha: context.sha,
-      details_url: `https://codesandbox.io/s/github/${issue.owner}/${issue.repo}/tree/${context.sha}/challenges/example-challenge`,
+      owner: repo.owner.login,
+      repo: repo.name,
+      name: 'codesandbox-preview',
+      head_sha: pr.head.sha,
+      details_url: `https://codesandbox.io/s/github/${repo.full_name}/tree/${pr.head.ref}/challenges/example-challenge`,
+      status: 'completed',
+      conclusion: 'success',
     });
   } catch (err) {
     core.setFailed(err.message);
