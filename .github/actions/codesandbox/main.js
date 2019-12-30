@@ -9,11 +9,6 @@ async function main() {
     const context = github.context;
     const issue = context.issue;
 
-    if (context.payload.action !== 'opened') {
-      console.log('No PR was opened, skipping');
-      return;
-    }
-
     // Do nothing if its not a pr
     if (!context.payload.pull_request) {
       console.log(
