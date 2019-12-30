@@ -1,6 +1,8 @@
 <h1 align="center">🤔  Challenges</h1>
 <p align="center">Accept your next challenge</p>
 
+<br />
+
 The goal of this project is to provide challenges for developers to practice on working with OSS. The challengers can practice on making changes by taking either hypothetical or practical challenges, the reviewers can practice on reviewing changes and proposing challenges. It’s like a RPG game for OSS developers.
 
 ## Characters
