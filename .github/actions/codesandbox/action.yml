@@ -5,5 +5,5 @@ inputs:
     description: 'Github token'
     required: true
 runs:
-  using: 'node13'
+  using: 'node12'
   main: 'main.js'
