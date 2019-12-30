@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "🤔  Challenges",
   "main": "index.js",
+  "scripts": {
+    "build": "yarn workspaces run build"
+  },
   "workspaces": [
     "challenges/*"
   ],
