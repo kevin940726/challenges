@@ -32,7 +32,7 @@ Like every RPG games, there are characters. There are 3 kinds of characters in t
 
 ## Submitting a challenge 👨‍🏫
 
-1. Submit a challenge via the [template](…). Be sure to make the challenge as clear as possible.
+1. Submit a challenge via the [template](https://github.com/kevin940726/challenges/issues/new?assignees=&labels=%3Athinking%3A+++challenges&template=propose-challenge.md&title=%5BChallenge%5D). Be sure to make the challenge as clear as possible.
 2. Wait for the **maintainers** to attach necessary labels.
 3. _(Recommended)_ Submit a PR to include a boilerplate for the challengers to work on. Place your boilerplate inside a folder named `your-challenge-name` (kebab-case) and place it under the `challenges` directory.
 4. Review the submitted PRs from the **challengers**. Be kind and give feedbacks to help them got merged, but also be sure to request changes when needed.
