@@ -9,6 +9,8 @@ async function main() {
     const context = github.context;
     const issue = context.issue;
 
+    console.log(context);
+
     // Do nothing if its not a pr
     if (!context.payload.pull_request) {
       console.log(
