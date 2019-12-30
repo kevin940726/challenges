@@ -33,7 +33,7 @@ async function main() {
       details_url: `https://codesandbox.io/s/github/${issue.owner}/${issue.repo}/tree/${context.sha}/challenges/example-challenge`,
     });
   } catch (err) {
-    core.setFailed(error.message);
+    core.setFailed(err.message);
     return;
   }
 }
