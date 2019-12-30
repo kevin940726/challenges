@@ -1,0 +1,10 @@
+name: challenges
+on: [pull_request]
+
+jobs:
+  codesandbox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: .github/actions/codesandbox
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
