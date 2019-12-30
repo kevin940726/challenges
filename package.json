@@ -13,6 +13,11 @@
   "author": "Kai Hao",
   "license": "MIT",
   "private": true,
+  "devDependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^2.0.0",
+    "canopic": "^0.2.1"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -43,8 +48,5 @@
     "bracketSpacing": true,
     "jsxBracketSameLine": false,
     "arrowParens": "avoid"
-  },
-  "devDependencies": {
-    "canopic": "^0.2.1"
   }
 }
