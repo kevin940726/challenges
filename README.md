@@ -24,7 +24,7 @@ Like every RPG games, there are characters. There are 3 kinds of characters in t
 
 ## Taking a challenge 👨‍💻
 
-1. Go to the [open challenges list](https://github.com/kevin940726/challenges/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%A4%94++challenges%22+-label%3A%22%F0%9F%92%AA++challenge+accepted%22) to find an open challenge you like to work on.
+1. Go to the [open challenges list](https://github.com/kevin940726/challenges/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22%3Athinking%3A+++challenges%22+-label%3A%22%F0%9F%92%AA++challenge+accepted%22+sort%3Aupdated-desc) to find an open challenge you like to work on.
 2. Leave a comment on the challenge to wait for the **reviewer** to assign the challenge to you.
 3. Start working on the challenge, happy coding 👨‍💻!
 4. If the challenge has a boilerplate folder then make changes in it, if not then create a new folder under `challenges` and named it `your-challenge-name` (kebab-case).
