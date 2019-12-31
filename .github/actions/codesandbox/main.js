@@ -16,14 +16,13 @@ async function main() {
       return;
     }
 
-    await octokit.checks.create({
+    await octokit.repos.createStatus({
       owner: repo.owner.login,
       repo: repo.name,
-      name: 'codesandbox-preview',
-      head_sha: pr.head.sha,
-      details_url: `https://codesandbox.io/s/github/${repo.full_name}/tree/${pr.head.ref}/challenges/example-challenge`,
-      status: 'completed',
-      conclusion: 'success',
+      sha: pr.head.sha,
+      state: 'success',
+      target_url: `https://codesandbox.io/s/github/${repo.full_name}/tree/${pr.head.ref}/challenges/example-challenge`,
+      description: 'CodeSandbox preview',
     });
   } catch (err) {
     core.setFailed(err.message);
