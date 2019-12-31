@@ -9,10 +9,9 @@ The goal of this project is to provide challenges for developers to practice on 
 
 Like every RPG games, there are characters. There are 3 kinds of characters in this repo:
 
-
-- 👨‍🏫  **Reviewer**: submits challenges and reviews the PRs.
-- 👨‍💻  **Challenger**: takes the challenges and submits PRs.
-- 👷  **Maintainer**: reviews the challenges and maintains this repo.
+- 👨‍🏫 **Reviewer**: submits challenges and reviews the PRs.
+- 👨‍💻 **Challenger**: takes the challenges and submits PRs.
+- 👷 **Maintainer**: reviews the challenges and maintains this repo.
 
 ## General guideline
 
@@ -32,7 +31,6 @@ Like every RPG games, there are characters. There are 3 kinds of characters in t
 5. Submit a pull request (PR) based on the template when you’re done. Be sure to give a detailed explanation on what you’ve done to make it more likely to get approved and merged.
 6. Go back to 1. and find another challenge!
 
-
 ## Submitting a challenge 👨‍🏫
 
 1. Submit a challenge via the [template](https://github.com/kevin940726/challenges/issues/new?assignees=&labels=%3Athinking%3A+++challenges&template=propose-challenge.md&title=%5BChallenge%5D). Be sure to make the challenge as clear as possible.
@@ -41,7 +39,6 @@ Like every RPG games, there are characters. There are 3 kinds of characters in t
 4. Review the submitted PRs from the **challengers**. Be kind and give feedbacks to help them got merged, but also be sure to request changes when needed.
 5. Close the challenge issue if it’s not yet closed by the PR.
 6. Work on submitting other challenges! Or try being a **challenger** next time!
-
 
 ## FAQ
 
