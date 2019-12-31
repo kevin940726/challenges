@@ -1,0 +1,9 @@
+name: 'codesandbox'
+description: 'Preview challenges in codesandbox'
+inputs:
+  github-token:
+    description: 'Github token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'main.js'
