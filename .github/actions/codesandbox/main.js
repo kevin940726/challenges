@@ -16,6 +16,8 @@ async function main() {
       return;
     }
 
+    console.log(pr);
+
     await octokit.repos.createStatus({
       owner: repo.owner.login,
       repo: repo.name,
@@ -23,6 +25,7 @@ async function main() {
       state: 'success',
       target_url: `https://codesandbox.io/s/github/${repo.full_name}/tree/${pr.head.ref}/challenges/example-challenge`,
       description: 'CodeSandbox preview',
+      context: 'CodeSandbox',
     });
   } catch (err) {
     core.setFailed(err.message);
