@@ -16,17 +16,39 @@ async function main() {
       return;
     }
 
-    console.log(pr);
+    const matches = pr.title.match(/^\[([^\]]+)\]/);
 
-    await octokit.repos.createStatus({
-      owner: repo.owner.login,
-      repo: repo.name,
-      sha: pr.head.sha,
-      state: 'success',
-      target_url: `https://codesandbox.io/s/github/${repo.full_name}/tree/${pr.head.ref}/challenges/example-challenge`,
-      description: 'CodeSandbox preview',
-      context: 'CodeSandbox',
-    });
+    if (!matches) {
+      console.log(
+        "The title of the PR doesn't have a corresponding challenge, skipping."
+      );
+      return;
+    }
+
+    const challenges = matches[1];
+
+    if (!challenges) {
+      console.log('Empty challenge, skipping.');
+      return;
+    }
+
+    await Promise.all(
+      challenges
+        .split(',')
+        .map(challenge => challenge.trim())
+        .filter(Boolean)
+        .map(challenge =>
+          octokit.repos.createStatus({
+            owner: repo.owner.login,
+            repo: repo.name,
+            sha: pr.head.sha,
+            state: 'success',
+            target_url: `https://codesandbox.io/s/github/${repo.full_name}/tree/${pr.head.ref}/challenges/${challenge}`,
+            description: 'CodeSandbox preview',
+            context: `${challenge} CodeSandbox`,
+          })
+        )
+    );
   } catch (err) {
     core.setFailed(err.message);
     return;
