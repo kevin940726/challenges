@@ -50,6 +50,10 @@ Sure! Any kinds of improvements are welcome, your enhancements will be reviewed 
 
 It’s up to you. However, small challenges will get a better chance to get challengers to work on. You can split up the challenges into multiple smaller ones if you feel like to.
 
+> Can I take my own challenges?
+
+Sure, if you find something you like to work on, and also want to gather some feedbacks from the community, there's no reason not to.
+
 ## Maintainers
 
 - Kai Hao
