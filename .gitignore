@@ -105,3 +105,6 @@ dist
 
 # Cache
 .DS_Store
+
+# CRA build output
+build/
