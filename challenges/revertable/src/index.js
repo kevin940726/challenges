@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import useRevertable from './useRevertable';
 
-function App({ text }) {
+function App({ realValue }) {
   const { pendingValue, value, cancel, submit, status, typing } = useRevertable(
     {
-      initialValue: text,
+      initialValue: realValue,
     }
   );
 
@@ -30,4 +30,4 @@ function App({ text }) {
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App text="Happy new year" />, rootElement);
+ReactDOM.render(<App realValue="Happy new year" />, rootElement);
