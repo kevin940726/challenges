@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import useRevertable from "./useRevertable";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import useRevertable from './useRevertable';
 
 function App({ text }) {
   const { pendingValue, value, cancel, submit, status, typing } = useRevertable(
     {
-      initialValue: text
+      initialValue: text,
     }
   );
 
@@ -19,7 +19,7 @@ function App({ text }) {
         }}
       >
         <input
-          value={status === "typing" ? pendingValue : value}
+          value={status === 'typing' ? pendingValue : value}
           onChange={e => typing(e.target.value)}
         />
         <button type="submit">Submit</button>
@@ -29,8 +29,5 @@ function App({ text }) {
   );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<App text="Happy new year" />, rootElement);
-y
-user.name=kalan
-user.email=kalan@linecorp.com
