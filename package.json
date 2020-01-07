@@ -30,6 +30,9 @@
     "lint-staged": "^9.5.0",
     "prettier": "1.19.1"
   },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
