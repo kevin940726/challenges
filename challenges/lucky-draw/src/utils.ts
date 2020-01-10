@@ -20,6 +20,9 @@ function shuffle(array: number[]) {
 }
 
 const getRand = (numOfOptions: number, numOfDraws: number) => {
+  if (numOfOptions > Math.pow(2, 32)) {
+    throw new Error('man! you must be kidding!');
+  }
   if (numOfDraws > numOfOptions) {
     throw new Error('more prizes than participants!');
   }
