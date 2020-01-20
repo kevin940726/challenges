@@ -1,27 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import useRevertable from './useRevertable';
 
-function App({ realValue }) {
-  const { pendingValue, value, cancel, submit, status, typing } = useRevertable(
-    {
-      initialValue: realValue,
-    }
-  );
+function App() {
+  const [realValue, setRealValue] = useState('hello world');
+  const { cancel, submit, onChange, value } = useRevertable({
+    realValue,
+    realOnChange: val => {
+      setRealValue(val);
+    },
+  });
 
   return (
     <div className="App">
-      <h2>{value}</h2>
+      <h2>{realValue}</h2>
       <form
         onSubmit={e => {
           e.preventDefault();
           submit();
         }}
       >
-        <input
-          value={status === 'typing' ? pendingValue : value}
-          onChange={e => typing(e.target.value)}
-        />
+        <input onChange={e => onChange(e.target.value)} />
         <button type="submit">Submit</button>
         <button onClick={() => cancel()}>Cancel</button>
       </form>
@@ -30,4 +29,4 @@ function App({ realValue }) {
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App realValue="Happy new year" />, rootElement);
+ReactDOM.render(<App />, rootElement);

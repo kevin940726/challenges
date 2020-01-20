@@ -1,63 +1,25 @@
-import { useReducer, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'SUBMIT':
-      return {
-        ...state,
-        value: state.pending,
-        status: 'submitted',
-      };
-    case 'CANCEL':
-      return {
-        ...state,
-        status: 'canceled',
-        pending: state.value,
-      };
-    case 'TYPING':
-      return {
-        ...state,
-        status: 'typing',
-        pending: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+const useRevertable = ({ realValue, realOnChange }) => {
+  const [value, setCurrentValue] = useState(realValue);
 
-const useRevertable = ({ initialValue }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    pending: initialValue,
-    value: initialValue,
-  });
+  const onChange = val => {
+    setCurrentValue(val);
+  };
 
-  const submit = useCallback(
-    val =>
-      dispatch({
-        type: 'SUBMIT',
-        payload: val,
-      }),
-    []
-  );
+  const submit = () => {
+    realOnChange(value);
+  };
 
-  const cancel = () =>
-    dispatch({
-      type: 'CANCEL',
-    });
-
-  const typing = val =>
-    dispatch({
-      type: 'TYPING',
-      payload: val,
-    });
+  const cancel = () => {
+    setCurrentValue(realValue);
+  };
 
   return {
-    pendingValue: state.pending,
-    value: state.value,
-    status: state.status,
-    typing,
     cancel,
     submit,
+    onChange,
+    value,
   };
 };
 
