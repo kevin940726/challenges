@@ -1,0 +1,22 @@
+name: Test Challenges
+
+on: pull_request_target
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: kevin940726/challenges-solutions
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+        with:
+          path: challenges
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: yarn
+      - run: yarn test
