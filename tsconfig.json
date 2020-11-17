@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "target": "ES2019",
+    "module": "commonjs",
+    "lib": ["ES2019"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "removeComments": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true
+  },
+  "include": ["challenges/**/*.ts"]
+}

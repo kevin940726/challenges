@@ -1,0 +1,7 @@
+{
+  "name": "use-counter",
+  "main": "use-counter.js",
+  "peerDependencies": {
+    "react": ">= 16"
+  }
+}
