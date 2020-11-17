@@ -3,14 +3,14 @@ name: Test Challenges
 on: pull_request_target
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
         with:
           repository: kevin940726/challenges-solutions
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SOLUTIONS_PAT }}
       - uses: actions/checkout@v2
         with:
           path: challenges
